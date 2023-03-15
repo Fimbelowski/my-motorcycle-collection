@@ -1,8 +1,9 @@
-import { createRouter, createWebHistory } from "vue-router";
-import { createApp } from "vue";
+import { createRouter, createWebHistory } from 'vue-router';
+import { createApp } from 'vue';
+import { library } from '@fortawesome/fontawesome-svg-core';
 
-import App from "@/App.vue";
-import routes from "./router/routes";
+import App from '@/App.vue';
+import routes from './router/routes';
 
 const app = createApp(App);
 
@@ -12,4 +13,4 @@ const router = createRouter({
 });
 
 app.use(router);
-app.mount("#app");
+app.mount('#app');
