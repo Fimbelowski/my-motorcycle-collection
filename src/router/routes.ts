@@ -6,37 +6,37 @@ import DucatiPanigaleV4 from "../pages/DucatiPanigaleV4.vue";
 import Home from "../pages/Home.vue";
 import IndianScoutBobber from "../pages/IndianScoutBobber.vue";
 import NotFound from "../pages/NotFound.vue";
-import RouteNames from "@/types/RouteNames";
+import RouteName from "@/types/RouteName";
 
 const ROUTES: RouteRecordRaw[] = [
   {
     component: Home,
-    name: RouteNames.Home,
+    name: RouteName.Home,
     path: "/",
   },
   {
     component: BmwF750Gs,
-    name: RouteNames.BmwF750GS,
+    name: RouteName.BmwF750GS,
     path: "/bmw-750-gs",
   },
   {
     component: DucatiMonster,
-    name: RouteNames.DucatiMonster,
+    name: RouteName.DucatiMonster,
     path: "/ducati-monster",
   },
   {
     component: DucatiPanigaleV4,
-    name: RouteNames.DucatiPanigaleV4,
+    name: RouteName.DucatiPanigaleV4,
     path: "/ducati-panigale-v4",
   },
   {
     component: IndianScoutBobber,
-    name: RouteNames.indianScoutBobber,
+    name: RouteName.indianScoutBobber,
     path: "/indian-scout-bobber",
   },
   {
     component: NotFound,
-    name: RouteNames.NotFound,
+    name: RouteName.NotFound,
     path: "/:pathMatch(.*)*",
   },
 ];

@@ -1,4 +1,4 @@
-enum RouteNames {
+enum RouteName {
   BmwF750GS = "bmwF750Gs",
   DucatiMonster = "ducatiMonster",
   DucatiPanigaleV4 = "ducatiPanigaleV4",
@@ -7,4 +7,4 @@ enum RouteNames {
   NotFound = "notFound",
 }
 
-export default RouteNames;
+export default RouteName;
