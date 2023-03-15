@@ -5,6 +5,7 @@ import DucatiMonster from "./pages/DucatiMonster.vue";
 import DucatiPanigaleV4 from "./pages/DucatiPanigaleV4.vue";
 import Home from "./pages/Home.vue";
 import IndianScoutBobber from "./pages/IndianScoutBobber.vue";
+import NotFound from "./pages/NotFound.vue";
 
 const ROUTES: RouteRecordRaw[] = [
   {
@@ -26,6 +27,10 @@ const ROUTES: RouteRecordRaw[] = [
   {
     component: IndianScoutBobber,
     path: "/indian-scout-bobber",
+  },
+  {
+    component: NotFound,
+    path: "/:pathMatch(.*)*",
   },
 ];
 
