@@ -8,6 +8,10 @@ import IndianScoutBobber from "./pages/IndianScoutBobber.vue";
 
 const ROUTES: RouteRecordRaw[] = [
   {
+    component: Home,
+    path: "/",
+  },
+  {
     component: BmwF750Gs,
     path: "/bmw-750-gs",
   },
@@ -18,10 +22,6 @@ const ROUTES: RouteRecordRaw[] = [
   {
     component: DucatiPanigaleV4,
     path: "/ducati-panigale-v4",
-  },
-  {
-    component: Home,
-    path: "/",
   },
   {
     component: IndianScoutBobber,
