@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterView } from "vue-router";
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
@@ -7,6 +7,6 @@ import { RouterView } from "vue-router";
 </template>
 
 <style lang="scss">
-@import "./sass/base/reset";
-@import "./sass/base/typography";
+@import './sass/base/reset';
+@import './sass/base/typography';
 </style>
