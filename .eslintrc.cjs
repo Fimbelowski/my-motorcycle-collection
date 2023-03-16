@@ -6,7 +6,7 @@ module.exports = {
   extends: ['airbnb-base', 'airbnb-typescript/base', 'prettier'],
   overrides: [
     {
-      extends: ['plugin:vue/vue3-recommended'],
+      extends: ['plugin:vue/vue3-recommended', 'prettier'],
       files: ['src/**/*.vue'],
       rules: {
         'no-spaced-func': 'off',
