@@ -1,11 +1,11 @@
 import { type RouteRecordRaw } from 'vue-router';
 
-import BmwF750Gs from '../pages/BmwF750Gs.vue';
-import DucatiMonster from '../pages/DucatiMonster.vue';
-import DucatiPanigaleV4 from '../pages/DucatiPanigaleV4.vue';
-import Home from '../pages/Home.vue';
-import IndianScoutBobber from '../pages/IndianScoutBobber.vue';
-import NotFound from '../pages/NotFound.vue';
+import BmwF750Gs from '../views/BmwF750Gs.vue';
+import DucatiMonster from '../views/DucatiMonster.vue';
+import DucatiPanigaleV4 from '../views/DucatiPanigaleV4.vue';
+import Home from '../views/Home.vue';
+import IndianScoutBobber from '../views/IndianScoutBobber.vue';
+import NotFound from '../views/NotFound.vue';
 import RouteName from '@/types/RouteName';
 
 const ROUTES: RouteRecordRaw[] = [
