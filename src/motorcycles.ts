@@ -12,7 +12,10 @@ const MOTORCYCLES: Record<MotorcycleName, Motorcycle> = {
     description:
       "The BMW F 750 GS is your ticket to adventure. With this balanced Enduro all-rounder, you can master all paths and expand your horizons. The F 750 GS gives you more power, more comfort, more spirit of GS. Feel the strong-charactered engine and enjoy the ease of handling of the F 750 GS. While you're off discovering the world, you have the bike safely under control with the Automatic Stability Control (ASC) and ABS. With the additional option Connectivity, the 6.5 inch TFT-display boasts many features including navigation and smartphone connectivity.",
     displacement: 853,
-    imgSrc: BmwF750Gs,
+    img: {
+      alt: '',
+      src: BmwF750Gs,
+    },
     manufacturer: 'BMW',
     model: 'F 750 GS',
     power: '77 hp (at 7,500 rpm)',
@@ -23,7 +26,10 @@ const MOTORCYCLES: Record<MotorcycleName, Motorcycle> = {
     description:
       'The Monster 821 pays homage to the legacy of the Monster 900, which over 25 years ago revolutionized the motorcycle world. Agile and featuring sporty performance, it was designed for maximum riding enjoyment, at all times and in all conditions.  The Monster 821 range has been rejuvenated with a new stealth version: matte black livery, updated graphics and front fairing give a unique character to the naked Ducati par excellence.',
     displacement: 821,
-    imgSrc: DucatiMonster,
+    img: {
+      alt: '',
+      src: DucatiMonster,
+    },
     manufacturer: 'Ducati',
     model: 'Monster 821 Stealth',
     power: '109 hp (80 kW)',
@@ -34,7 +40,10 @@ const MOTORCYCLES: Record<MotorcycleName, Motorcycle> = {
     description:
       'The 2020 version of the Panigale V4 boosts performance even further and takes track riding to the next level for amateurs and pros alike. ',
     displacement: 1103,
-    imgSrc: DucatiPanigaleV4,
+    img: {
+      alt: '',
+      src: DucatiPanigaleV4,
+    },
     manufacturer: 'Ducati',
     model: 'Panigale V4',
     power: '157.5 kW (214 hp)',
@@ -45,7 +54,10 @@ const MOTORCYCLES: Record<MotorcycleName, Motorcycle> = {
     description:
       'Stripped down and blacked out with an aggressive stance and raw power, the Scout Bobber is a modern take on the iconic bobber style.',
     displacement: 1133,
-    imgSrc: IndianScoutBobber,
+    img: {
+      alt: '',
+      src: IndianScoutBobber,
+    },
     manufacturer: 'Indian',
     model: 'Scout Bobber',
     power: '100 hp',
