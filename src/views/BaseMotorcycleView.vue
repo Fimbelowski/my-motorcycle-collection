@@ -13,6 +13,12 @@ const props = defineProps<{
 }>();
 
 useHead({
+  meta: [
+    {
+      content: props.motorcycle.description,
+      name: 'description',
+    },
+  ],
   title: `My Motorcycles -- ${getMotorcycleMakeModel(props.motorcycle)}`,
 });
 

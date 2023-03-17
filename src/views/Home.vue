@@ -10,6 +10,13 @@ import RouteName from '@/types/RouteName';
 import type Motorcycle from '@/types/Motorcycle';
 
 useHead({
+  meta: [
+    {
+      content:
+        'My personal collection of motorcycles; featuring bikes from BMW, Ducati and Indian.',
+      name: 'description',
+    },
+  ],
   title: 'My Motorcycles',
 });
 
