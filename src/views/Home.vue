@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router';
+
+import MotorcycleImage from '@/components/MotorcycleImage.vue';
 import MotorcycleName from '@/types/MotorcycleName';
 import MOTORCYCLES from '@/motorcycles';
-import PreviewCard from '@/components/PreviewCard.vue';
 import RouteName from '@/types/RouteName';
 
 import type Motorcycle from '@/types/Motorcycle';
@@ -18,21 +20,15 @@ const routeNameToMotorcycleMap: Record<string, Motorcycle> = {
   <main class="home">
     <h1 class="home__heading">My Motorcycle Collection</h1>
     <div class="home__grid">
-      <PreviewCard
-        v-for="[
-          routeName,
-          {
-            manufacturer,
-            model,
-            img: { alt, src },
-          },
-        ] in Object.entries(routeNameToMotorcycleMap)"
-        :key="model"
-        :img-alt="alt"
-        :img-src="src"
-        :title="`${manufacturer} ${model}`"
-        :to="routeName as RouteName"
-      />
+      <RouterLink
+        v-for="[routeName, motorcyle] in Object.entries(
+          routeNameToMotorcycleMap
+        )"
+        :key="motorcyle.model"
+        :to="{ name: routeName }"
+      >
+        <MotorcycleImage :motorcycle="motorcyle" show-label />
+      </RouterLink>
     </div>
   </main>
 </template>
@@ -47,7 +43,6 @@ const routeNameToMotorcycleMap: Record<string, Motorcycle> = {
   &__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 30rem;
     gap: 4rem;
     align-items: start;
   }

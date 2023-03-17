@@ -1,21 +1,41 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
+import { computed } from 'vue';
 
-import type RouteName from '@/types/RouteName';
+import type Motorcycle from '@/types/Motorcycle';
 
-defineProps<{ imgAlt: string; imgSrc: string; title: string; to: RouteName }>();
+interface Props {
+  motorcycle: Motorcycle;
+  showLabel?: boolean;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  showLabel: false,
+});
+
+const label = computed(() => {
+  const {
+    motorcycle: { manufacturer, model },
+  } = props;
+
+  return `${manufacturer} ${model}`;
+});
 </script>
 
 <template>
-  <RouterLink class="preview-card" :to="{ name: to }">
-    <img :alt="imgAlt" class="preview-card__image" :src="imgSrc" />
-    <h2 class="preview-card__title">{{ title }}</h2>
-  </RouterLink>
+  <div class="motorcycle-image">
+    <img
+      :alt="motorcycle.img.alt"
+      class="motorcycle-image__image"
+      :src="motorcycle.img.src"
+    />
+    <h2 v-if="showLabel" class="motorcycle-image__label">{{ label }}</h2>
+  </div>
 </template>
 
 <style lang="scss">
-.preview-card {
-  height: 100%;
+.motorcycle-image {
+  width: 55rem;
+  height: 30rem;
   border: var(--border);
   border-radius: 0.5rem;
   overflow: hidden;
@@ -34,12 +54,7 @@ defineProps<{ imgAlt: string; imgSrc: string; title: string; to: RouteName }>();
     object-fit: cover;
   }
 
-  &__link {
-    display: block;
-    height: 100%;
-  }
-
-  &__title {
+  &__label {
     position: absolute;
     bottom: 0;
     background: linear-gradient(to right, #000000, #00000000 60%);
