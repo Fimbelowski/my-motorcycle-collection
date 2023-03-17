@@ -50,13 +50,23 @@ const routeNameToMotorcycleMap: Record<string, Motorcycle> = {
   max-width: var(--page-max-width);
   margin: 0 auto;
   min-height: 100vh;
-  padding: 2.5rem;
+  padding: var(--page-padding);
+
+  @include respond(large) {
+    max-width: none;
+  }
 
   &__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
     align-items: start;
+
+    @include respond(large) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__heading {

@@ -95,7 +95,7 @@ const titleColorClass = computed(() => {
     <h1 :class="['base-motorcycle-view__title', titleColorClass]">
       {{ getMotorcycleMakeModel(motorcycle) }}
     </h1>
-    <div class="base-motorcycle-view__grid">
+    <div class="base-motorcycle-view__layout">
       <div class="base-motorcycle-view__image-container">
         <MotorcycleImage :motorcycle="motorcycle" />
       </div>
@@ -117,6 +117,11 @@ const titleColorClass = computed(() => {
   max-width: var(--page-max-width);
   margin: 0 auto;
   min-height: 100vh;
+
+  @include respond(large) {
+    max-width: none;
+    padding: 0 var(--page-padding);
+  }
 
   &__description {
     grid-column: 1 / -1;
@@ -147,15 +152,26 @@ const titleColorClass = computed(() => {
     }
   }
 
-  &__grid {
+  &__layout {
     display: grid;
     grid-template-columns: min-content 1fr;
+
+    @include respond(medium) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__header {
     max-width: var(--page-max-width);
     margin: 0 auto;
-    padding: 1.5rem 0;
+    padding: var(--page-padding) 0;
+
+    @include respond(large) {
+      max-width: none;
+      padding: var(--page-padding);
+    }
   }
 
   &__image-container {
