@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
+import { useHead } from '@vueuse/head';
 
 import MotorcycleImage from '@/components/MotorcycleImage.vue';
 import MotorcycleName from '@/types/MotorcycleName';
@@ -7,6 +8,17 @@ import MOTORCYCLES from '@/motorcycles';
 import RouteName from '@/types/RouteName';
 
 import type Motorcycle from '@/types/Motorcycle';
+
+useHead({
+  meta: [
+    {
+      content:
+        'My personal collection of motorcycles; featuring bikes from BMW, Ducati and Indian.',
+      name: 'description',
+    },
+  ],
+  title: 'My Motorcycles',
+});
 
 const routeNameToMotorcycleMap: Record<string, Motorcycle> = {
   [RouteName.BmwF750GS]: MOTORCYCLES[MotorcycleName.BmwF750GS],

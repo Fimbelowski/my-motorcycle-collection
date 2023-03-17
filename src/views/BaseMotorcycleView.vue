@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import { useHead } from '@vueuse/head';
 
 import getMotorcycleMakeModel from '@/utilities/getMotorcycleMakeModel';
 import HomeLink from '@/components/HomeLink.vue';
@@ -10,6 +11,16 @@ import type Motorcycle from '@/types/Motorcycle';
 const props = defineProps<{
   motorcycle: Motorcycle;
 }>();
+
+useHead({
+  meta: [
+    {
+      content: props.motorcycle.description,
+      name: 'description',
+    },
+  ],
+  title: `My Motorcycles -- ${getMotorcycleMakeModel(props.motorcycle)}`,
+});
 
 const displacement = computed(
   () => `${props.motorcycle.displacement.toLocaleString()}cc`

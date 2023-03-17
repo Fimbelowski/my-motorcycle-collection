@@ -1,5 +1,17 @@
 <script setup lang="ts">
+import { useHead } from '@vueuse/head';
+
 import HomeLink from '@/components/HomeLink.vue';
+
+useHead({
+  meta: [
+    {
+      content: 'Page not found!',
+      name: 'description',
+    },
+  ],
+  title: 'My Motorcycles -- Not Found',
+});
 </script>
 
 <template>
