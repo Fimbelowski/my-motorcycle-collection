@@ -39,7 +39,7 @@ const routeNameToMotorcycleMap: Record<string, Motorcycle> = {
 
 <style lang="scss">
 .home {
-  max-width: 120rem;
+  max-width: var(--page-max-width);
   margin: 0 auto;
   min-height: 100vh;
   padding: 2.5rem;
