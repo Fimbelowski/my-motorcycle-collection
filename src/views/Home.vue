@@ -27,7 +27,7 @@ const routeNameToMotorcycleMap: Record<string, Motorcycle> = {
         :key="motorcyle.model"
         :to="{ name: routeName }"
       >
-        <MotorcycleImage :motorcycle="motorcyle" show-label />
+        <MotorcycleImage animate-on-hover :motorcycle="motorcyle" show-label />
       </RouterLink>
     </div>
   </main>
@@ -48,7 +48,7 @@ const routeNameToMotorcycleMap: Record<string, Motorcycle> = {
   }
 
   &__heading {
-    font-weight: var(--font-weight-heading);
+    font-weight: var(--font-weight-thin);
     text-align: center;
     margin-bottom: 4rem;
   }

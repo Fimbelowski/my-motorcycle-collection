@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
+import getMotorcycleMakeModel from '@/utilities/getMotorcycleMakeModel';
+import MotorcycleImage from '@/components/MotorcycleImage.vue';
+
 import type Motorcycle from '@/types/Motorcycle';
 
 const props = defineProps<{
@@ -53,21 +56,44 @@ const descriptionListItems = computed(() => {
 
   return listItems;
 });
+
+const titleColorClass = computed(() => {
+  const {
+    motorcycle: { manufacturer },
+  } = props;
+  let suffix: string;
+
+  if (manufacturer === 'BMW') {
+    suffix = 'blue';
+  } else if (manufacturer === 'Ducati') {
+    suffix = 'red';
+  } else {
+    suffix = 'black';
+  }
+
+  return `base-motorcycle-view__title--${suffix}`;
+});
 </script>
 
 <template>
   <main class="base-motorcycle-view">
-    <img
-      :alt="motorcycle.img.alt"
-      class="base-motorcycle-view__image"
-      :src="motorcycle.img.src"
-    />
-    <dl class="base-motorcycle-view__description-list">
-      <div v-for="{ label, value } in descriptionListItems" :key="value">
-        <dt class="base-motorcycle-view__description-term">{{ label }}:</dt>
-        <dd class="base-motorcycle-view__description-details">{{ value }}</dd>
+    <h1 :class="['base-motorcycle-view__title', titleColorClass]">
+      {{ getMotorcycleMakeModel(motorcycle) }}
+    </h1>
+    <div class="base-motorcycle-view__grid">
+      <div class="base-motorcycle-view__image-container">
+        <MotorcycleImage :motorcycle="motorcycle" />
       </div>
-    </dl>
+      <dl class="base-motorcycle-view__description-list">
+        <div v-for="{ label, value } in descriptionListItems" :key="value">
+          <dt class="base-motorcycle-view__description-term">{{ label }}:</dt>
+          <dd class="base-motorcycle-view__description-details">{{ value }}</dd>
+        </div>
+      </dl>
+      <p class="base-motorcycle-view__description">
+        {{ motorcycle.description }}
+      </p>
+    </div>
   </main>
 </template>
 
@@ -78,11 +104,20 @@ const descriptionListItems = computed(() => {
   min-height: 100vh;
   padding-top: 4rem;
 
-  background-color: gray;
-
   &__description {
+    grid-column: 1 / -1;
+    padding-top: 2rem;
+    max-width: 100rem;
+    font-size: 2.25rem;
+    text-indent: 3rem;
+
     &-details {
       display: inline;
+      font-weight: var(--font-weight-thin);
+
+      &::before {
+        content: ' ';
+      }
     }
 
     &-list {
@@ -90,6 +125,7 @@ const descriptionListItems = computed(() => {
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      padding-left: 2rem;
     }
 
     &-term {
@@ -97,10 +133,30 @@ const descriptionListItems = computed(() => {
     }
   }
 
-  &__image {
-    max-width: 60rem;
-    float: left;
-    margin-right: 2rem;
+  &__grid {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+  }
+
+  &__image-container {
+    justify-self: right;
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: var(--font-weight-thin);
+    margin-bottom: 2rem;
+
+    &--black {
+    }
+
+    &--blue {
+      color: var(--color-blue);
+    }
+
+    &--red {
+      color: var(--color-red);
+    }
   }
 }
 </style>
