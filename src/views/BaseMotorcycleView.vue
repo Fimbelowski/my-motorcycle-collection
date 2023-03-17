@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { RouterLink } from 'vue-router';
 
 import getMotorcycleMakeModel from '@/utilities/getMotorcycleMakeModel';
 import MotorcycleImage from '@/components/MotorcycleImage.vue';
@@ -76,6 +78,15 @@ const titleColorClass = computed(() => {
 </script>
 
 <template>
+  <header class="base-motorcycle-view__header">
+    <RouterLink class="base-motorcycle-view__home-link" :to="{ name: 'home' }">
+      <FontAwesomeIcon
+        class="base-motorcycle-view__home-link-icon"
+        icon="fa-solid fa-arrow-left"
+      />
+      Home
+    </RouterLink>
+  </header>
   <main class="base-motorcycle-view">
     <h1 :class="['base-motorcycle-view__title', titleColorClass]">
       {{ getMotorcycleMakeModel(motorcycle) }}
@@ -102,7 +113,6 @@ const titleColorClass = computed(() => {
   max-width: var(--page-max-width);
   margin: 0 auto;
   min-height: 100vh;
-  padding-top: 4rem;
 
   &__description {
     grid-column: 1 / -1;
@@ -136,6 +146,29 @@ const titleColorClass = computed(() => {
   &__grid {
     display: grid;
     grid-template-columns: min-content 1fr;
+  }
+
+  &__header {
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding: 1.5rem 0;
+  }
+
+  &__home-link {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    font-size: 2.25rem;
+
+    &:link,
+    &:visited {
+      color: var(--color-blue);
+    }
+  }
+
+  &__home-link-icon {
+    margin-right: 0.75rem;
   }
 
   &__image-container {
