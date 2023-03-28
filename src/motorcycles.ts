@@ -2,9 +2,8 @@ import BmwF750Gs from './assets/BmwF750GS.png';
 import DucatiMonster from './assets/DucatiMonster.jpeg';
 import DucatiPanigaleV4 from './assets/DucatiPanigaleV4.png';
 import IndianScoutBobber from './assets/IndianScoutBobber.png';
-import MotorcycleName from './types/MotorcycleName';
-
 import type Motorcycle from './types/Motorcycle';
+import MotorcycleName from './types/MotorcycleName';
 
 const MOTORCYCLES: Record<MotorcycleName, Motorcycle> = {
   [MotorcycleName.BmwF750GS]: {

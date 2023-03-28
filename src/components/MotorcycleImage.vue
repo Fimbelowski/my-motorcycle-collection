@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import getMotorcycleMakeModel from '@/utilities/getMotorcycleMakeModel';
-
 import type Motorcycle from '@/types/Motorcycle';
+import getMotorcycleMakeModel from '@/utilities/getMotorcycleMakeModel';
 
 interface Props {
   animateOnHover?: boolean;

@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { computed } from 'vue';
 import { useHead } from '@vueuse/head';
+import { computed } from 'vue';
 
-import getMotorcycleMakeModel from '@/utilities/getMotorcycleMakeModel';
 import HomeLink from '@/components/HomeLink.vue';
 import MotorcycleImage from '@/components/MotorcycleImage.vue';
-
 import type Motorcycle from '@/types/Motorcycle';
+import getMotorcycleMakeModel from '@/utilities/getMotorcycleMakeModel';
 
 const props = defineProps<{
   motorcycle: Motorcycle;

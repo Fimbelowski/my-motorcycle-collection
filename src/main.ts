@@ -1,11 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import { createApp } from 'vue';
-import { createHead } from '@vueuse/head';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { createHead } from '@vueuse/head';
+import { createApp } from 'vue';
+import { createRouter, createWebHistory } from 'vue-router';
 
 import App from '@/App.vue';
-import routes from './router/routes';
+import routes from '@/router/routes';
 
 library.add(faArrowLeft);
 

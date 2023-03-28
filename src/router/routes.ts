@@ -1,10 +1,10 @@
+import Home from '../views/Home.vue';
+import NotFound from '../views/NotFound.vue';
 import { type RouteRecordRaw } from 'vue-router';
 
-import BaseMotorcycleView from '@/views/BaseMotorcycleView.vue';
-import Home from '../views/Home.vue';
 import MOTORCYCLES from '@/motorcycles';
-import NotFound from '../views/NotFound.vue';
 import RouteName from '@/types/RouteName';
+import BaseMotorcycleView from '@/views/BaseMotorcycleView.vue';
 
 const ROUTES: RouteRecordRaw[] = [
   {

@@ -1,7 +1,5 @@
 {
-  "importOrder": [
-    "^@/(.*)$"
-  ],
+  "importOrder": ["^@/(.*)$"],
   "importOrderCaseInsensitive": true,
   "importOrderSeparation": true,
   "singleQuote": true
