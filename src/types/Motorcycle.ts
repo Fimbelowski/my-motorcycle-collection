@@ -1,4 +1,4 @@
-import type MotorcycleImage from './MotorcycleImage';
+import type MotorcycleImage from '@/types/MotorcycleImage';
 
 export default interface Motorcycle {
   color: string;
